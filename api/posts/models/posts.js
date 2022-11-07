@@ -8,11 +8,14 @@ const axios = require('axios');
  */
 
 module.exports = {
-  async afterCreate(result, data) {
-    axios.post('https://api.netlify.com/build_hooks/6367ff048c085d7ea7d87a94');
-  },
+  lifecycles: {
+    async afterCreate(result, data) {
+      axios.post('https://api.netlify.com/build_hooks/6367ff048c085d7ea7d87a94');
+    },
 
-  async afterUpdate(result, params, data) {
-    axios.post('https://api.netlify.com/build_hooks/6367ff048c085d7ea7d87a94');
+    async afterUpdate(result, params, data) {
+      axios.post('https://api.netlify.com/build_hooks/6367ff048c085d7ea7d87a94');
+    }
   }
+
 };
